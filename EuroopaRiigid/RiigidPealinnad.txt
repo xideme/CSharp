@@ -33,7 +33,7 @@ Prantsusmaa-Pariis
 Rootsi-Stockholm
 Rumeenia-Bukarest
 Saksamaa-Berliin
-San-Marino_San_Marino
+San_Marino-San_Marino
 Serbia-Belgrad
 Slovakkia-Bratislava
 Sloveenia-Ljubljana
@@ -48,3 +48,4 @@ Ungari-Budapest
 Valgevene-Minsk
 Vatikan-Vatican
 Venemaa-Moskva
+Sealand-Boat

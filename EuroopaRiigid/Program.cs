@@ -101,7 +101,12 @@ class Program
                     countryCapital[newCountry] = newCapital;
                     capitalCountry[newCapital] = newCountry;
                     countries.Add(newCountry);
-                    WriteToFile("RiigidPealinnad.txt", new List<string>(countryCapital.Keys));
+                    List<string> countryCapitalList = new List<string>();
+                    foreach (var item in countryCapital)
+                    {
+                        countryCapitalList.Add($"{item.Key}-{item.Value}");
+                    }
+                    WriteToFile("../../../RiigidPealinnad.txt", countryCapitalList);
                 }
                 else
                 {
@@ -124,7 +129,12 @@ class Program
                             countryCapital.Remove(countryToDelete);
                             capitalCountry.Remove(capitalToDelete);
                             countries.Remove(countryToDelete);
-                            WriteToFile("RiigidPealinnad.txt", new List<string>(countryCapital.Keys));
+                            List<string> countryCapitalList = new List<string>();
+                            foreach (var item in countryCapital)
+                            {
+                                countryCapitalList.Add($"{item.Key}-{item.Value}");
+                            }
+                            WriteToFile("../../../RiigidPealinnad.txt", countryCapitalList);
                         }
                         else
                         {
@@ -141,7 +151,12 @@ class Program
                             capitalCountry.Remove(capitalToDelete);
                             countryCapital.Remove(countryToDelete);
                             countries.Remove(countryToDelete);
-                            WriteToFile("RiigidPealinnad.txt", new List<string>(countryCapital.Keys));
+                            List<string> countryCapitalList = new List<string>();
+                            foreach (var item in countryCapital)
+                            {
+                                countryCapitalList.Add($"{item.Key}-{item.Value}");
+                            }
+                            WriteToFile("../../../RiigidPealinnad.txt", countryCapitalList);
                         }
                         else
                         {
@@ -160,6 +175,8 @@ class Program
             Console.WriteLine("Invalid choice.");
         }
     }
+
+
 
     static void Game(Dictionary<string, string> countryCapital, Dictionary<string, string> capitalCountry, List<string> countries)
     {
