@@ -11,9 +11,10 @@ namespace TARgv23_C_põhikonstruktsioonid
         public string Nimi {get; set;}
         public int Vanus { get; set;}
         public inimene() {}
-        public inimene(string nimi)
+        public inimene(string nimi, int=vanus)
         {
             Nimi = nimi;
+            Vanus = vanus;
         }
 
     }
