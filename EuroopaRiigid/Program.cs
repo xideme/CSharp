@@ -10,7 +10,8 @@ class Program
         Dictionary<string, string> capitalCountry = new Dictionary<string, string>();
         List<string> countries = new List<string>();
 
-        using (StreamReader reader = new StreamReader(fileName))
+        using (StreamReader reader = new StreamReader(fileName)) //C# StreamReader is used to read characters to a stream in a specified encoding.
+                                                                 //StreamReader.Read method reads the next character or next set of characters from the input stream.
         {
             string line;
             while ((line = reader.ReadLine()) != null)
@@ -40,6 +41,7 @@ class Program
         Console.WriteLine("Dictionary saved!");
     }
 
+    // Поиск стран или столиц
     static void ViewCountryCapital(Dictionary<string, string> countryCapital, Dictionary<string, string> capitalCountry)
     {
         Console.WriteLine("\nSearch for capital 1 or country 2\n");
@@ -81,6 +83,7 @@ class Program
         }
     }
 
+    //Удаление или добавление по стране и столице
     static void AddDeleteCountryCapital(Dictionary<string, string> countryCapital, Dictionary<string, string> capitalCountry, List<string> countries)
     {
         Console.WriteLine("\nAdd 1 or Delete 2\n");
@@ -177,7 +180,7 @@ class Program
     }
 
 
-
+    //игра отгадать страну или столицу 5 попыток
     static void Game(Dictionary<string, string> countryCapital, Dictionary<string, string> capitalCountry, List<string> countries)
     {
         int score = 0;
@@ -258,7 +261,7 @@ class Program
         }
 
         List<string> countries = new List<string>(countryCapital.Keys);
-
+        //меню
         while (true)
         {
             Console.WriteLine("\nView Country or Capital - 1\nAdd/Delete Country or Capital - 2\nGame - 3\nExit - 4\n");
