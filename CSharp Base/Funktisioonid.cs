@@ -13,9 +13,9 @@ namespace TARgv23_C_põhikonstruktsioonid
             Console.WriteLine("Tere kallis {0}", nimi);
         }
 
-        public static int Korruta(int arv1, int arv2)            
+        public static int Korruta(int arv1, int arv2)
         {
-            return arv1*arv2;
+            return arv1 * arv2;
         }
     }
 }
