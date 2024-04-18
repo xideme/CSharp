@@ -32,13 +32,6 @@ namespace TARgv23_C_põhikonstruktsioonid
             Nimi = nimi;
             Vanus = vanus;
         }
-        public void ÜtleVanus()
-        {
-            Console.WriteLine("Ma olen " + Vanus + " aastat vana");
-        }
-        public virtual double Sissetulek(double tasu)
-        {
-            return tasu;
-        }
+
     }
 }
