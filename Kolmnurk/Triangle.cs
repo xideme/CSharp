@@ -7,12 +7,47 @@ namespace Kolmnurk
         public double A;
         public double B;
         public double C;
-
+        public double S;
+        public double H;
         public Triangle(double a, double b, double c)
         {
             A = a;
             B = b;
             C = c;
+        }
+        public Triangle(double s, double h) 
+        { 
+            S = s;
+            H = h;
+        }
+
+        public string TriangleType
+        {
+            get
+            {
+                if (ExistTriangle)
+                {
+                    if (A==B && B==C && A==C)
+                    {
+                        return "võrdkülgne";
+
+                    }
+                    else if(A==B || B==C || A==C)
+                    {
+                        return "võrdhaarne";
+
+                    }
+                    else
+                    {
+                        return "erikülgne";
+
+                    }
+                }
+                else {
+                    return "tundmatu tüüp";
+                     }
+            }
+                
         }
 
         public bool ExistTriangle
@@ -36,16 +71,31 @@ namespace Kolmnurk
             set { A = value; }
         }
 
+        public double GetSetB
+        {
+            get { return B; }
+            set { B = value; }
+        }
+
         public double GetSetC
         {
             get { return C; }
             set { C = value; }
         }
 
+        public double GetSetS
+        {
+            get { return S; }
+            set { S = value; }
+        }
+
         public double Perimeter()
         {
             return A + B + C;
         }
+
+        public double PerimentrL()
+        { return (A + B + C)/2;}
 
         public double Area()
         {
