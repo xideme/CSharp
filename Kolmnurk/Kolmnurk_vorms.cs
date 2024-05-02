@@ -29,6 +29,7 @@ namespace Kolmnurk
             b = Convert.ToDouble(textBox2.Text);
             c = Convert.ToDouble(textBox3.Text);
             Triangle t=new Triangle(a, b, c);
+            lv.Items.Clear(); //   очищаем список перед добавлением новых элементов
             lv.Items.Add("Külg A");
             lv.Items[0].SubItems.Add(t.OutputA());
             lv.Items.Add("Külg B");
@@ -43,6 +44,14 @@ namespace Kolmnurk
             lv.Items.Add("Cуществует");
             if (triangle.ExistTriangle) { lv.Items[5].SubItems.Add("Существует"); }
             else lv.Items[5].SubItems.Add("Не существует");
+            lv.Items.Add("Спецификатор");
+            lv.Items[6].SubItems.Add(triangle.TriangleType);
+
+            // получаем PictureBox 
+            PictureBox pictureBox = pictureBox1;
+
+            // метод для изменения картинки с типом треугольника
+            triangle.ImageTriangleType(pictureBox);
 
 
         }

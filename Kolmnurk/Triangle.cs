@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace Kolmnurk
 {
@@ -62,6 +63,31 @@ namespace Kolmnurk
                 {
                     return false;
                 }
+            }
+        }
+
+
+        //    метод для определения типа треугольника и изменения  картинки
+        public void ImageTriangleType(PictureBox pictureBox)
+        {
+            string triangleType = TriangleType.ToLower(); 
+            switch (triangleType)
+            {
+                case "võrdkülgne":
+                    // картинки для равностороннего треугольника
+                    pictureBox.Image = Properties.Resources.ravnostr1; 
+                    break;
+                case "võrdhaarne":
+                    // картинки для равнобедренного треугольника
+                    pictureBox.Image = Properties.Resources.ravnobedr1; 
+                    break;
+                case "erikülgne":
+                    // картинки для разностороннего треугольника
+                    pictureBox.Image = Properties.Resources.razno1; 
+                    break;
+                default:
+                    Console.WriteLine("Неизвестный тип треугольника");
+                    break;
             }
         }
 
