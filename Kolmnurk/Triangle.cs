@@ -30,17 +30,17 @@ namespace Kolmnurk
                 {
                     if (A==B && B==C && A==C)
                     {
-                        return "võrdkülgne";
+                        return "равносторонний";
 
                     }
                     else if(A==B || B==C || A==C)
                     {
-                        return "võrdhaarne";
+                        return "равнобедренний";
 
                     }
                     else
                     {
-                        return "erikülgne";
+                        return "разносторонний";
 
                     }
                 }
@@ -66,6 +66,19 @@ namespace Kolmnurk
             }
         }
 
+        public double Bisector()
+        {
+            if (ExistTriangle)
+            {
+                double p = Perimeter() / 2;
+                double bisector = (2 * Math.Sqrt(A * B * p * (p - C))) / (A + B);
+                return bisector;
+            }
+            else
+            {
+                return 0;
+            }
+        }
 
         //    метод для определения типа треугольника и изменения  картинки
         public void ImageTriangleType(PictureBox pictureBox)
@@ -73,15 +86,15 @@ namespace Kolmnurk
             string triangleType = TriangleType.ToLower(); 
             switch (triangleType)
             {
-                case "võrdkülgne":
+                case "равносторонний":
                     // картинки для равностороннего треугольника
                     pictureBox.Image = Properties.Resources.ravnostr1; 
                     break;
-                case "võrdhaarne":
+                case "равнобедренний":
                     // картинки для равнобедренного треугольника
                     pictureBox.Image = Properties.Resources.ravnobedr1; 
                     break;
-                case "erikülgne":
+                case "разносторонний":
                     // картинки для разностороннего треугольника
                     pictureBox.Image = Properties.Resources.razno1; 
                     break;
@@ -133,6 +146,7 @@ namespace Kolmnurk
             }
             return s;
         }
+
 
         public string OutputA()
         {

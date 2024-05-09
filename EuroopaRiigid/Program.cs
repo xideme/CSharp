@@ -6,11 +6,11 @@ class Program
 {
     static Dictionary<string, string> ReadFromFile(string fileName)
     {
-        Dictionary<string, string> countryCapital = new Dictionary<string, string>();
-        Dictionary<string, string> capitalCountry = new Dictionary<string, string>();
-        List<string> countries = new List<string>();
+        Dictionary<string, string> countryCapital = new();
+        Dictionary<string, string> capitalCountry = new();
+        List<string> countries = new();
 
-        using (StreamReader reader = new StreamReader(fileName)) //C# StreamReader is used to read characters to a stream in a specified encoding.
+        using (StreamReader reader = new(fileName)) //C# StreamReader is used to read characters to a stream in a specified encoding.
                                                                  //StreamReader.Read method reads the next character or next set of characters from the input stream.
         {
             string line;
@@ -20,9 +20,9 @@ class Program
                 string country = parts[0].Trim();
                 string capital = parts[1].Trim();
 
-                countryCapital[country] = capital;
-                capitalCountry[capital] = country;
-                countries.Add(country);
+                countryCapital[country] = capital; //country as the key and the capital as the value.
+                capitalCountry[capital] = country; //capital as the key and the country as the value
+                countries.Add(country); 
             }
         }
 
@@ -31,7 +31,7 @@ class Program
 
     static void WriteToFile(string fileName, List<string> list)
     {
-        using (StreamWriter writer = new StreamWriter(fileName))
+        using (StreamWriter writer = new(fileName))
         {
             foreach (string item in list)
             {
@@ -104,7 +104,7 @@ class Program
                     countryCapital[newCountry] = newCapital;
                     capitalCountry[newCapital] = newCountry;
                     countries.Add(newCountry);
-                    List<string> countryCapitalList = new List<string>();
+                    List<string> countryCapitalList = new();
                     foreach (var item in countryCapital)
                     {
                         countryCapitalList.Add($"{item.Key}-{item.Value}");
@@ -132,7 +132,7 @@ class Program
                             countryCapital.Remove(countryToDelete);
                             capitalCountry.Remove(capitalToDelete);
                             countries.Remove(countryToDelete);
-                            List<string> countryCapitalList = new List<string>();
+                            List<string> countryCapitalList = new();
                             foreach (var item in countryCapital)
                             {
                                 countryCapitalList.Add($"{item.Key}-{item.Value}");
@@ -185,7 +185,7 @@ class Program
     {
         int score = 0;
         double percent = 0;
-        List<int> gameAnswers = new List<int>();
+        List<int> gameAnswers = new();
         Console.Write("\nChoose Country To Capital 1 or Capital To Country 2: ");
         int choice = int.Parse(Console.ReadLine());
 
@@ -219,7 +219,7 @@ class Program
             }
             else if (choice == 2)
             {
-                List<string> capitals = new List<string>(capitalCountry.Keys);
+                List<string> capitals = new(capitalCountry.Keys);
                 for (int i = 0; i < 5; i++)
                 {
                     int randomIndex = new Random().Next(0, capitals.Count);
@@ -254,13 +254,13 @@ class Program
     static void Main(string[] args)
     {
         Dictionary<string, string> countryCapital = ReadFromFile("../../../RiigidPealinnad.txt");
-        Dictionary<string, string> capitalCountry = new Dictionary<string, string>();
+        Dictionary<string, string> capitalCountry = new();
         foreach (var item in countryCapital)
         {
             capitalCountry[item.Value] = item.Key;
         }
 
-        List<string> countries = new List<string>(countryCapital.Keys);
+        List<string> countries = new(countryCapital.Keys);
         //меню
         while (true)
         {

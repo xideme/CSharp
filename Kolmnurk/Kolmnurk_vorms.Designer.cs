@@ -47,12 +47,14 @@
             // 
             this.Arvuta.BackColor = System.Drawing.Color.Turquoise;
             this.Arvuta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Arvuta.FlatAppearance.BorderSize = 3;
+            this.Arvuta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Arvuta.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Arvuta.Location = new System.Drawing.Point(513, 396);
+            this.Arvuta.Location = new System.Drawing.Point(523, 387);
             this.Arvuta.Margin = new System.Windows.Forms.Padding(4);
             this.Arvuta.Name = "Arvuta";
             this.Arvuta.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Arvuta.Size = new System.Drawing.Size(205, 64);
+            this.Arvuta.Size = new System.Drawing.Size(205, 72);
             this.Arvuta.TabIndex = 0;
             this.Arvuta.Text = "Arvuta";
             this.Arvuta.UseVisualStyleBackColor = false;

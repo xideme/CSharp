@@ -46,7 +46,8 @@ namespace Kolmnurk
             else lv.Items[5].SubItems.Add("Не существует");
             lv.Items.Add("Спецификатор");
             lv.Items[6].SubItems.Add(triangle.TriangleType);
-
+            lv.Items.Add("Длина биссектрисы");
+            lv.Items[7].SubItems.Add(Convert.ToString(triangle.Bisector()));
             // получаем PictureBox 
             PictureBox pictureBox = pictureBox1;
 

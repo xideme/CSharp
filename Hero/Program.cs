@@ -13,9 +13,9 @@ class Hero
         Location = location;
     }
 
-    public virtual int Save(int endangeredPeople)
+    public virtual int Save(int dangerPeople)
     {
-        return (int)Math.Round(endangeredPeople * 0.95);
+        return (int)Math.Round(dangerPeople * (0.95));
     }
 
     public override string ToString()
@@ -58,16 +58,16 @@ class Program
             if (hero is SuperHero)
             {
                 SuperHero superHero = (SuperHero)hero;
-                int inDanger = 450;
+                int inDanger = 666;
                 Console.WriteLine($"People in Danger: {inDanger}");
-                int savedPeople = superHero.Save(inDanger); // 450 people in danger
+                int savedPeople = superHero.Save(inDanger); // 666 people in danger
                 Console.WriteLine($"Saved people: {savedPeople}");
             }
             else
             {
-                int inDanger = 450;
+                int inDanger = 666;
                 Console.WriteLine($"People in Danger: {inDanger}");
-                int savedPeople = hero.Save(inDanger); // 450 people in danger
+                int savedPeople = hero.Save(inDanger); // 666 people in danger
                 Console.WriteLine($"Saved people: {savedPeople}");
             }
             Console.WriteLine();
@@ -78,10 +78,10 @@ class Program
     {
         try
         {
-            using (StreamReader sr = new StreamReader(fileName))
+            using (StreamReader herofile = new StreamReader(fileName))
             {
                 string line;
-                while ((line = sr.ReadLine()) != null)
+                while ((line = herofile.ReadLine()) != null)
                 {
                     string[] data = line.Split('/');
                     string name = data[0].Trim();
